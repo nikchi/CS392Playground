@@ -1,12 +1,20 @@
-#include "header.h"
+#include <stdio.h>
+#include <signal.h>
+
+void ding(int);
 
 int main()
 {
-	signal(SIGINT,nope());
+	signal(SIGINT,ding);
 	while(1)
 	{
-		my_str("look around you ")
-		/*my_str("you dont listen \n");*/
+		puts("look around you ");
+		/*puts("you dont listen \n");*/
 	}
 	return 0;
+}
+
+void ding(int signum)
+{
+	puts("nope ");
 }
